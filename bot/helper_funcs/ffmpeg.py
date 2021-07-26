@@ -50,7 +50,7 @@ async def convert_video(video_file, output_directory, total_time, bot, message, 
       "-preset", 
       "veryfast",
       "-crf",
-      "23",
+      "26",
       "-c:a",
       "copy",
       out_put_file_name
