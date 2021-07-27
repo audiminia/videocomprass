@@ -65,7 +65,7 @@ async def convert_video(video_file, output_directory, total_time, bot, message, 
             "-loglevel",
             "quiet",
             "-progress",
-            progress
+            progress,
             "-i",
             f"{video_file}",
             "-c:v",
