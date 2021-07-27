@@ -58,7 +58,7 @@ async def convert_video(video_file, output_directory, total_time, bot, message, 
             "copy",
             out_put_file_name
         ]
-    except:
+    except Exception:
         file_genertor_command = [
             "ffmpeg",
             "-hide_banner",
