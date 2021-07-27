@@ -36,27 +36,50 @@ async def convert_video(video_file, output_directory, total_time, bot, message, 
     with open(progress, 'w') as f:
       pass
     
-    file_genertor_command = [
-      "ffmpeg",
-      "-hide_banner",
-      "-loglevel",
-      "quiet",
-      "-progress",
-      progress,
-      "-i",
-      f"{video_file}",
-      "-filter_complex",
-      f"subtitles={video_file}",
-      "-c:v", 
-      "h264",
-      "-preset", 
-      "veryfast",
-      "-crf",
-      "26",
-      "-c:a",
-      "copy",
-      out_put_file_name
-    ]
+    try:
+        file_genertor_command = [
+          "ffmpeg",
+          "-hide_banner",
+          "-loglevel",
+          "quiet",
+          "-progress",
+          progress,
+          "-i",
+          f"{video_file}",
+          "-filter_complex",
+          f"subtitles={video_file}",
+          "-c:v", 
+          "h264",
+          "-preset", 
+          "veryfast",
+          "-crf",
+          "26",
+          "-c:a",
+          "copy",
+          out_put_file_name
+        ]
+    except:
+        file_genertor_command = [
+            "ffmpeg",
+            "-hide_banner",
+            "-loglevel",
+            "quiet",
+            "-progress",
+            progress
+            "-i",
+            f"{video_file}",
+            "-c:v",
+            "h264",
+            "-preset",
+            "veryfast",
+            "-crf",
+            "26",
+            "-c:a",
+            "copy",
+            out_put_file_name
+         ]
+            
+            
     if not isAuto:
       filesize = os.stat(video_file).st_size
       calculated_percentage = 100 - target_percentage
