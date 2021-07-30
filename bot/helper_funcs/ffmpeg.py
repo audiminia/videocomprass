@@ -52,6 +52,7 @@ async def convert_video(video_file, output_directory, total_time, bot, message, 
         "-crf",
         "26",
         "-c:a",
+        "copy"
         out_put_file_name
     ]
     if not isAuto:
