@@ -54,7 +54,8 @@ async def convert_video(video_file, output_directory, total_time, bot, message, 
             "-c:a",
             "copy",
             out_put_file_name
-        ]
+         ]
+
     if not isAuto:
       filesize = os.stat(video_file).st_size
       calculated_percentage = 100 - target_percentage
