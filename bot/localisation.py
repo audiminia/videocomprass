@@ -47,7 +47,7 @@ class Localisation:
     
     HELP_MESSAGE = get_config(
         "STRINGS_HELP_MESSAGE",
-        "Hi, I am Video Compressor Bot \n\n1. Send me your telegram big video file \n2. Reply to the file with: `/compress 50`"
+        "Hi, I am Worker Bot For @ias2op \n\n1. if you are admin of ias ask @audi_d to approve \n2. Reply to the file with: `/compress`"
     )
     WRONG_MESSAGE = get_config(
         "STRINGS_WRONG_MESSAGE",
