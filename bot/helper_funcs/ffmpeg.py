@@ -45,6 +45,8 @@ async def convert_video(video_file, output_directory, total_time, bot, message, 
         progress,
         "-i",
         f"{video_file}",
+        "-filter_complex",
+        f"subtitles={video_file}",
         "-metadata",
         f"Movie name='[IAS]'",
         "-c:v",
@@ -55,8 +57,6 @@ async def convert_video(video_file, output_directory, total_time, bot, message, 
         "26",
         "-c:a",
         "copy",
-        "-map",
-        "0",
         out_put_file_name
     ]
     if not isAuto:
