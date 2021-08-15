@@ -45,8 +45,6 @@ async def convert_video(video_file, output_directory, total_time, bot, message, 
         progress,
         "-i",
         f"{video_file}",
-        "-filter_complex",
-        f"subtitles={video_file}",
         "-c:v",
         "h264",
         "-preset",
@@ -55,6 +53,8 @@ async def convert_video(video_file, output_directory, total_time, bot, message, 
         "26",
         "-c:a",
         "copy",
+        "-map",
+        "0",
         out_put_file_name
     ]
     if not isAuto:
