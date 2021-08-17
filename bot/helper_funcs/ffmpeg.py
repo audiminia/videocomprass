@@ -31,31 +31,33 @@ from bot import (
 async def convert_video(video_file, output_directory, total_time, bot, message, target_percentage, isAuto, bug):
     # https://stackoverflow.com/a/13891070/4723940
     out_put_file_name = output_directory + \
-        "/" + video_file + ".mp4"
+        "/" + video_file + ".mkv"
     progress = output_directory + "/" + "progress.txt"
     with open(progress, 'w') as f:
       pass
   
     file_genertor_command = [
-        "ffmpeg",
-        "-hide_banner",
-        "-loglevel",
-        "quiet",
-        "-progress",
-        progress,
-        "-i",
-        f"{video_file}",
-        "-c:v",
-        "h264",
-        "-preset",
-        "veryfast",
-        "-crf",
-        "26",
-        "-c:a",
-        "copy",
-        "-map",
-        "0",
-        out_put_file_name
+            "ffmpeg",
+            "-hide_banner",
+            "-loglevel",
+            "quiet",
+            "-progress",
+            progress,
+            "-i",
+            video_file
+            "-c:v",
+            "h264",
+            "-preset",
+            "veryfast",
+            "-crf",
+            "26",
+            "-c:a",
+            "copy",
+            out_put_file_name
+            "copy",
+            "-map",
+            "0",
+            out_put_file_name
     ]
     if not isAuto:
       filesize = os.stat(video_file).st_size
