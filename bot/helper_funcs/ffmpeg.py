@@ -53,8 +53,6 @@ async def convert_video(video_file, output_directory, total_time, bot, message, 
             "26",
             "-c:a",
             "copy",
-            out_put_file_name
-            "copy",
             "-map",
             "0",
             out_put_file_name
